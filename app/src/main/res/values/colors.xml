@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#424242</color>
+    <color name="colorPrimaryDark">#212121</color>
+    <color name="colorAccent">#ffb300</color>
+
+    <color name="colorTypeMismatchError">#FF0000</color>
+    <color name="colorNumberFormatError">#FF3F00</color>
+    <color name="colorOutOfRangeError">#FF7F00</color>
+    <color name="colorIterationError">#FFBF00</color>
+    <color name="colorNoError">#3F3F3F</color>
+</resources>

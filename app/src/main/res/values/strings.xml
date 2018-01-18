@@ -1,0 +1,256 @@
+<resources
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingTranslation">
+    <string name="app_name" translatable="false">IAPWS-IF97 props</string>
+    <string name="about">Calculates various properties of water and steam based on the international standard IAPWS-IF97</string>
+    <string name="text_about">About</string>
+    <string name="created_by">Created by kovlev @ Flow-Cont Ltd.</string>
+
+    <string name="text_to_calc">Property to Calculate</string>
+    <string name="text_param_1" translatable="false">Param 1:</string>
+    <string name="text_param_2" translatable="false">Param 2:</string>
+    <string name="but_calc">Calculate</string>
+    <string name="error_nf">Invalid numbers</string>
+    <string name="error_tm">Invalid parameter types</string>
+    <string name="error_oor">The parameters are out of limits</string>
+    <string name="error_it">Can not by solved with iteration</string>
+
+    <string name="param_temperature">Temperature</string>
+    <string name="param_pressure">Pressure</string>
+    <string name="param_enthalpy">Enthalpy</string>
+    <string name="param_density">Density</string>
+    <string name="param_spec_volume">Specific volume</string>
+    <string name="param_spec_enthropy">Specific enthropy</string>
+    <string name="param_spec_int_energy">Specific internal energy</string>
+    <string name="param_spec_ibar_heatcap">Specific isobaric heat capacity</string>
+    <string name="param_spec_ichor_heatcap">Specific isochoric heat capacity</string>
+    <string name="param_sound_speed">Speed of sound</string>
+    <string name="param_dyn_viscosity">Dynamic viscosity</string>
+    <string name="param_prandtl">Prandtl</string>
+    <string name="param_thermal_cond">Thermal conductivity</string>
+    <string name="param_surface_tension">Surface tension</string>
+    <string name="param_vapour_fraction">Vapour fraction</string>
+    <string name="param_vapour_volume_fraction">Vapour volume fraction</string>
+    <string name="param_kappa">Kappa</string>
+    <string name="param_sat_temperature">Sat. Temperature</string>
+    <string name="param_sat_pressure">Sat. Pressure</string>
+    <string name="param_steam__">[Steam]</string>
+    <string name="param_liquid__">[Liquid]</string>
+    <string name="param_temp_steam">Temperature (Steam)</string>
+
+
+    <string-array name="main_categories">
+        <item>@string/param_temperature</item>
+        <item>@string/param_pressure</item>
+        <item>@string/param_enthalpy</item>
+        <item>@string/param_density</item>
+        <item>@string/param_spec_volume</item>
+        <item>@string/param_spec_enthropy</item>
+        <item>@string/param_spec_int_energy</item>
+        <item>@string/param_spec_ibar_heatcap</item>
+        <item>@string/param_spec_ichor_heatcap</item>
+        <item>@string/param_sound_speed</item>
+        <item>@string/param_dyn_viscosity</item>
+        <item>@string/param_prandtl</item>
+        <item>@string/param_thermal_cond</item>
+        <item>@string/param_surface_tension</item>
+        <item>@string/param_vapour_fraction</item>
+        <item>@string/param_vapour_volume_fraction</item>
+        <item>@string/param_kappa</item>
+        <item>@string/param_sat_temperature</item>
+        <item>@string/param_sat_pressure</item>
+    </string-array>
+
+    <string-array name="temp_p1">
+        <item>@string/param_pressure</item>
+        <item>@string/param_enthalpy</item>
+    </string-array>
+    <string-array name="temp_p2">
+        <item>@string/param_enthalpy</item>
+        <item>@string/param_spec_enthropy</item>
+    </string-array>
+
+    <string-array name="pres_p1">
+        <item>@string/param_enthalpy</item>
+    </string-array>
+    <string-array name="pres_p2">
+        <item>@string/param_spec_enthropy</item>
+        <item>@string/param_density</item>
+    </string-array>
+
+    <string-array name="enth_p1">
+        <item>@string/param_pressure</item>
+        <item>@string/param_temperature</item>
+    </string-array>
+    <string-array name="enth_p2">
+        <item>@string/param_temperature</item>
+        <item>@string/param_steam__</item>
+        <item>@string/param_liquid__</item>
+        <item>@string/param_spec_enthropy</item>
+        <item>@string/param_vapour_fraction</item>>
+        <item>@string/param_density</item>
+    </string-array>
+
+    <string-array name="spvo_p1">
+        <item>@string/param_pressure</item>
+        <item>@string/param_temperature</item>
+    </string-array>
+    <string-array name="spvo_p2">
+        <item>@string/param_temperature</item>
+        <item>@string/param_steam__</item>
+        <item>@string/param_liquid__</item>
+        <item>@string/param_enthalpy</item>
+        <item>@string/param_spec_enthropy</item>
+    </string-array>
+
+    <string-array name="dens_p1">
+        <item>@string/param_pressure</item>
+        <item>@string/param_temperature</item>
+    </string-array>
+    <string-array name="dens_p2">
+        <item>@string/param_temperature</item>
+        <item>@string/param_steam__</item>
+        <item>@string/param_liquid__</item>
+        <item>@string/param_enthalpy</item>
+        <item>@string/param_spec_enthropy</item>
+    </string-array>
+
+    <string-array name="spen_p1">
+        <item>@string/param_pressure</item>
+        <item>@string/param_temperature</item>
+    </string-array>
+    <string-array name="spen_p2">
+        <item>@string/param_temperature</item>
+        <item>@string/param_steam__</item>
+        <item>@string/param_liquid__</item>
+        <item>@string/param_enthalpy</item>
+    </string-array>
+
+    <string-array name="spie_p1">
+        <item>@string/param_pressure</item>
+        <item>@string/param_temperature</item>
+    </string-array>
+    <string-array name="spie_p2">
+        <item>@string/param_temperature</item>
+        <item>@string/param_steam__</item>
+        <item>@string/param_liquid__</item>
+        <item>@string/param_enthalpy</item>
+        <item>@string/param_spec_enthropy</item>
+    </string-array>
+
+    <string-array name="sbhc_p1">
+        <item>@string/param_pressure</item>
+        <item>@string/param_temperature</item>
+    </string-array>
+    <string-array name="sbhc_p2">
+        <item>@string/param_temperature</item>
+        <item>@string/param_steam__</item>
+        <item>@string/param_liquid__</item>
+        <item>@string/param_enthalpy</item>
+        <item>@string/param_spec_enthropy</item>
+    </string-array>
+
+    <string-array name="schc_p1">
+        <item>@string/param_pressure</item>
+        <item>@string/param_temperature</item>
+    </string-array>
+    <string-array name="schc_p2">
+        <item>@string/param_temperature</item>
+        <item>@string/param_steam__</item>
+        <item>@string/param_liquid__</item>
+        <item>@string/param_enthalpy</item>
+        <item>@string/param_spec_enthropy</item>
+    </string-array>
+
+    <string-array name="ssnd_p1">
+        <item>@string/param_pressure</item>
+        <item>@string/param_temperature</item>
+    </string-array>
+    <string-array name="ssnd_p2">
+        <item>@string/param_temperature</item>
+        <item>@string/param_steam__</item>
+        <item>@string/param_liquid__</item>
+        <item>@string/param_enthalpy</item>
+        <item>@string/param_spec_enthropy</item>
+    </string-array>
+
+    <string-array name="dynv_p1">
+        <item>@string/param_pressure</item>
+    </string-array>
+    <string-array name="dynv_p2">
+        <item>@string/param_temperature</item>
+        <item>@string/param_enthalpy</item>
+        <item>@string/param_spec_enthropy</item>
+    </string-array>
+
+    <string-array name="pran_p1">
+        <item>@string/param_pressure</item>
+    </string-array>
+    <string-array name="pran_p2">
+        <item>@string/param_temperature</item>
+        <item>@string/param_enthalpy</item>
+    </string-array>
+
+    <string-array name="thco_p1">
+        <item>@string/param_pressure</item>
+        <item>@string/param_temperature</item>
+        <item>@string/param_enthalpy</item>
+    </string-array>
+    <string-array name="thco_p2">
+        <item>@string/param_temperature</item>
+        <item>@string/param_steam__</item>
+        <item>@string/param_liquid__</item>
+        <item>@string/param_spec_enthropy</item>
+    </string-array>
+
+    <string-array name="sute_p1">
+        <item>@string/param_temperature</item>
+        <item>@string/param_pressure</item>
+    </string-array>
+    <string-array name="sute_p2">
+        <item/>
+    </string-array>
+
+    <string-array name="vapf_p1">
+        <item>@string/param_pressure</item>
+    </string-array>
+    <string-array name="vapf_p2">
+        <item>@string/param_enthalpy</item>
+        <item>@string/param_spec_enthropy</item>
+    </string-array>
+
+    <string-array name="vavf_p1">
+        <item>@string/param_pressure</item>
+    </string-array>
+    <string-array name="vavf_p2">
+        <item>@string/param_enthalpy</item>
+        <item>@string/param_spec_enthropy</item>
+    </string-array>
+
+    <string-array name="kapp_p1">
+        <item>@string/param_pressure</item>
+    </string-array>
+    <string-array name="kapp_p2">
+        <item>@string/param_temperature</item>
+        <item>@string/param_temp_steam</item>
+        <item>@string/param_enthalpy</item>
+    </string-array>
+
+    <string-array name="satt_p1">
+        <item>@string/param_pressure</item>
+        <item>@string/param_spec_enthropy</item>
+    </string-array>
+    <string-array name="satt_p2">
+        <item/>
+    </string-array>
+
+    <string-array name="satp_p1">
+        <item>@string/param_temperature</item>
+        <item>@string/param_spec_enthropy</item>
+    </string-array>
+    <string-array name="satp_p2">
+        <item/>
+    </string-array>
+
+
+</resources>

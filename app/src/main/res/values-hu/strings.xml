@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="about">Víz és vízgőz fizikokémiai tulajdonságok számítása az IAPWS-IF97 nemzetközi ajánlások alapján.</string>
+    <string name="but_calc">Számít</string>
+    <string name="created_by">Készítette: kovlev @ Flow-Cont Kft.</string>
+    <string name="error_it">Eredménytelen iteráció</string>
+    <string name="error_nf">Érvénytelen számok</string>
+    <string name="error_oor">A paraméterek a határon kívülre esnek</string>
+    <string name="error_tm">Hibás paramétertípusok</string>
+    <string name="text_about">Névjegy</string>
+    <string name="text_to_calc">Számítandó mennyiség</string>
+
+    <string name="param_temperature">Hőmérséklet</string>
+    <string name="param_pressure">Nyomás</string>
+    <string name="param_enthalpy">Entalpia</string>
+    <string name="param_density">Sűrűség</string>
+    <string name="param_spec_volume">Fajlagos térfogat</string>
+    <string name="param_spec_enthropy">Fajlagos entrópia</string>
+    <string name="param_spec_int_energy">Fajlagos belső energia</string>
+    <string name="param_spec_ibar_heatcap">Fajlagos izobár hőkapacitás</string>
+    <string name="param_spec_ichor_heatcap">Fajlagos izochor hőkapacitás</string>
+    <string name="param_sound_speed">Hangsebesség</string>
+    <string name="param_dyn_viscosity">Dinamikus viszkozitás</string>
+    <string name="param_prandtl">Prandtl</string>
+    <string name="param_thermal_cond">Hővezetés</string>
+    <string name="param_surface_tension">Felületi feszültség</string>
+    <string name="param_vapour_fraction">Gőzfrakció</string>
+    <string name="param_vapour_volume_fraction">Gőz térfogatarány</string>
+    <string name="param_kappa">Kappa</string>
+    <string name="param_sat_temperature">Sat. Hőmérséklet</string>
+    <string name="param_sat_pressure">Sat. Nyomás</string>
+    <string name="param_steam__">[Gőz]</string>
+    <string name="param_liquid__">[Folyadék]</string>
+    <string name="param_temp_steam">Hőmérséklet (Gőz)</string>
+</resources>
