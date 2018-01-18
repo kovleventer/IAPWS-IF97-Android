@@ -1,4 +1,4 @@
-package kovlev.com.iapws_if97;
+package com.kovlev.iapws_if97;
 
 /**
  * Code from XSteam LibreOffice module by x-eng.com

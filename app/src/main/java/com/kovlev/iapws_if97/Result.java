@@ -1,4 +1,4 @@
-package kovlev.com.iapws_if97;
+package com.kovlev.iapws_if97;
 
 import android.content.Context;
 

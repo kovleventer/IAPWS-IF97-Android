@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="kovlev.com.iapws_if97">
+    package="com.kovlev.iapws_if97">
 
     <application
         android:allowBackup="true"
