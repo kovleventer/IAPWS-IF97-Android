@@ -2,7 +2,7 @@
 <resources>
     <string name="about">Víz és vízgőz fizikokémiai tulajdonságok számítása az IAPWS-IF97 nemzetközi ajánlások alapján.</string>
     <string name="but_calc">Számít</string>
-    <string name="created_by">Készítette: kovlev @ Flow-Cont Kft.</string>
+    <string name="created_by">Készítette: kovlev</string>
     <string name="error_it">Eredménytelen iteráció</string>
     <string name="error_nf">Érvénytelen számok</string>
     <string name="error_oor">A paraméterek a határon kívülre esnek</string>

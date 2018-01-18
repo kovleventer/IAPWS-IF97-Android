@@ -4,7 +4,7 @@
     <string name="app_name" translatable="false">IAPWS-IF97 props</string>
     <string name="about">Calculates various properties of water and steam based on the international standard IAPWS-IF97</string>
     <string name="text_about">About</string>
-    <string name="created_by">Created by kovlev @ Flow-Cont Ltd.</string>
+    <string name="created_by">Created by kovlev</string>
 
     <string name="text_to_calc">Property to Calculate</string>
     <string name="text_param_1" translatable="false">Param 1:</string>
