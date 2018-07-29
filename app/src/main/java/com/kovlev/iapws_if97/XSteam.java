@@ -6,6 +6,7 @@ package com.kovlev.iapws_if97;
 
 public class XSteam {
 
+    // TODO use exceptions instead of return codes
     private static final double OUT_OF_RANGE_ERROR = -9999;
     private static final double ITERATION_ERROR = -9997;
 
@@ -435,16 +436,16 @@ public class XSteam {
         return 1 / res;
     }
 
-    public static double RHOV_T(double p) {
-        double res = VV_T(p);
+    public static double RHOV_T(double T) {
+        double res = VV_T(T);
         if (res == OUT_OF_RANGE_ERROR) {
             return OUT_OF_RANGE_ERROR;
         }
         return 1 / res;
     }
 
-    public static double RHOL_T(double p) {
-        double res = VL_T(p);
+    public static double RHOL_T(double T) {
+        double res = VL_T(T);
         if (res == OUT_OF_RANGE_ERROR) {
             return OUT_OF_RANGE_ERROR;
         }
@@ -1602,6 +1603,7 @@ public class XSteam {
     }
 
     private static double p3sat_h(double h) {
+        // TODO initialize these (and the others below) in a static class initializer block
         double[] Ii = {0, 1, 1, 1, 1, 5, 7, 8, 14, 20, 22, 24, 28, 36};
         double[] Ji = {0, 1, 3, 4, 36, 3, 0, 24, 16, 16, 3, 18, 8, 24};
         double[] ni = {0.600073641753024, -9.36203654849857, 24.6590798594147, -107.014222858224, -91582131580576.8, -8623.32011700662, -23.5837344740032, 2.52304969384128E+17, -3.89718771997719E+18, -3.33775713645296E+22, 35649946963.6328, -1.48547544720641E+26, 3.30611514838798E+18, 8.13641294467829E+37};
@@ -1775,13 +1777,13 @@ public class XSteam {
         tc0 = Math.pow(T, 0.5) * (0.0102811 + 0.0299621 * T + 0.0156146 * Math.pow(T, 2) - 0.00422464 * Math.pow(T, 3));
         tc1 = -0.39707 + 0.400302 * rho + 1.06 * Math.exp(-0.171587 * Math.pow(rho + 2.39219, 2));
         dT = Math.abs(T - 1) + 0.00308976;
-        Q = 2 + 0.0822994 / Math.pow(dT, 3 / 5);
+        Q = 2 + 0.0822994 / Math.pow(dT, 3.0 / 5);
         if (T >= 1) {
             s = 1 / dT;
         } else {
-            s = 10.0932 / Math.pow(dT, 3 / 5);
+            s = 10.0932 / Math.pow(dT, 3.0 / 5);
         }
-        tc2 = (0.0701309 / Math.pow(T, 10) + 0.011852) * Math.pow(rho, 9 / 5) * Math.exp(0.642857 * (1 - Math.pow(rho, 14 / 5))) + 0.00169937 * s * Math.pow(rho, Q) * Math.exp((Q / (1 + Q)) * (1 - Math.pow(rho, 1 + Q))) - 1.02 * Math.exp(-4.11717 * Math.pow(T, 3 / 2) - 6.17937 / Math.pow(rho, 5));
+        tc2 = (0.0701309 / Math.pow(T, 10) + 0.011852) * Math.pow(rho, 9.0 / 5) * Math.exp(0.642857 * (1 - Math.pow(rho, 14.0 / 5))) + 0.00169937 * s * Math.pow(rho, Q) * Math.exp((Q / (1 + Q)) * (1 - Math.pow(rho, 1 + Q))) - 1.02 * Math.exp(-4.11717 * Math.pow(T, 3.0 / 2) - 6.17937 / Math.pow(rho, 5));
         return tc0 + tc1 + tc2;
     }
 
@@ -1798,6 +1800,7 @@ public class XSteam {
         return b * Math.pow(tau, my) * (1 + bb * tau);
     }
 
+    // TODO alternative unit types
     private static double toSIunit_p(double arg) {
         return arg / 10;
     }

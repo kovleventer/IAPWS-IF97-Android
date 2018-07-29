@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/IAPWS_IF97_Andr.iml" filepath="$PROJECT_DIR$/IAPWS_IF97_Andr.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IAPWS-IF97-Android.iml" filepath="$PROJECT_DIR$/IAPWS-IF97-Android.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

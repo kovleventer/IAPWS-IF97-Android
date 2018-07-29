@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="MissingTranslation">
     <string name="app_name" translatable="false">IAPWS-IF97 props</string>
-    <string name="about">Calculates various properties of water and steam based on the international standard IAPWS-IF97</string>
+    <string name="about">Calculates various properties of water and steam based on the international formulation IAPWS-IF97</string>
     <string name="text_about">About</string>
     <string name="created_by">Created by kovlev</string>
 
