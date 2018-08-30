@@ -32,4 +32,6 @@
     <string name="param_steam__">[Gőz]</string>
     <string name="param_liquid__">[Folyadék]</string>
     <string name="param_temp_steam">Hőmérséklet (Gőz)</string>
+    <string name="label_settings">Beállítások</string>
+    <string name="label_precision">Tizedespont után megjelenített számjegyek</string>
 </resources>

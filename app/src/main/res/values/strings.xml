@@ -9,11 +9,15 @@
     <string name="text_to_calc">Property to Calculate</string>
     <string name="text_param_1" translatable="false">Param 1:</string>
     <string name="text_param_2" translatable="false">Param 2:</string>
+    <string name="label_settings">Settings</string>
+    <string name="label_precision">Displayed digits after decimal point</string>
     <string name="but_calc">Calculate</string>
     <string name="error_nf">Invalid numbers</string>
     <string name="error_tm">Invalid parameter types</string>
     <string name="error_oor">The parameters are out of limits</string>
     <string name="error_it">Can not by solved with iteration</string>
+
+    <string name="key_precision" translatable="false">precision</string>
 
     <string name="param_temperature">Temperature</string>
     <string name="param_pressure">Pressure</string>

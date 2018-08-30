@@ -6,6 +6,7 @@ import android.content.Context;
  * @author kovlev
  */
 
+// TODO remove this class
 public class Result {
     String mainCategory;
     public String mainUnit = "";

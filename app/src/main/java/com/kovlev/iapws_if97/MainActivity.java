@@ -2,11 +2,14 @@ package com.kovlev.iapws_if97;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -16,11 +19,9 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
     // Error codes used
     public static final double ERROR_XSTEAM_OOR = -9999;
     public static final double ERROR_XSTEAM_TM = -9998;
@@ -39,7 +40,11 @@ public class MainActivity extends AppCompatActivity {
 
     TextView result;
 
-    NumberFormat formatter2 = new DecimalFormat("#0.00");
+    // Formatting
+    //NumberFormat formatter2 = new DecimalFormat("#0.00");
+    private static final int DEFAULT_PRECISION = 2;
+    private int precision = DEFAULT_PRECISION;
+
     String numberFormatErrorMessage;
     String typeMismatchErrorMessage;
     String outOfRangeErrorMessage;
@@ -70,6 +75,10 @@ public class MainActivity extends AppCompatActivity {
         param2ME = (TextView) findViewById(R.id.param2_me);
 
         result = (TextView) findViewById(R.id.result_text_view);
+
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        setPrecision(sharedPreferences);
+        sharedPreferences.registerOnSharedPreferenceChangeListener(this);
 
         mainSelector.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
@@ -201,6 +210,12 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        PreferenceManager.getDefaultSharedPreferences(this).unregisterOnSharedPreferenceChangeListener(this);
     }
 
     /**
@@ -355,6 +370,13 @@ public class MainActivity extends AppCompatActivity {
             param2Selector.setAdapter(adapterParamSelector);
     }
 
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+        if (key.equals(getString(R.string.key_precision))) {
+            setPrecision(sharedPreferences);
+        }
+    }
+
     public enum Error {
         NUMBER_FORMAT_ERROR, TYPE_MISMATCH_ERROR, OUT_OF_RANGE_ERROR, NO_ERROR, ITERATION_ERROR
     }
@@ -389,7 +411,7 @@ public class MainActivity extends AppCompatActivity {
         else if (Math.abs(resultValue-ERROR_XSTEAM_IT) < 0.1)
             writeText(iterationErrorMessage, Error.ITERATION_ERROR);
         else
-            writeText(formatter2.format(resultValue) + " " + result.mainUnit, Error.NO_ERROR);
+            writeText(Utils.createFormatter(precision).format(resultValue) + " " + result.mainUnit, Error.NO_ERROR);
     }
 
     /**
@@ -446,9 +468,21 @@ public class MainActivity extends AppCompatActivity {
                 builder.setCancelable(true);
                 builder.create().show();
                 return true;
+            case R.id.settings_id:
+                Intent startSettingsActivity = new Intent(this, SettingsActivity.class);
+                startActivity(startSettingsActivity);
+                return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
 
+    private void setPrecision(SharedPreferences sp) {
+        // EditTextPreference stores the value as a string
+        try {
+            precision = Integer.parseInt(sp.getString(getString(R.string.key_precision), Integer.toString(precision)));
+        } catch (NumberFormatException nfe) {
+            precision = DEFAULT_PRECISION;
+        }
+    }
 }

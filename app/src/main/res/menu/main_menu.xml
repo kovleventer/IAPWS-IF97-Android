@@ -6,4 +6,9 @@
         android:title="@string/text_about"
         android:icon="@drawable/help"
         app:showAsAction="always" />
+    <item
+        android:id="@+id/settings_id"
+        android:title="@string/label_settings"
+        android:icon="@drawable/settings"
+        app:showAsAction="ifRoom" />
 </menu>
